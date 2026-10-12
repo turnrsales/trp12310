@@ -1,0 +1,247 @@
+<header class="header-45" id="page-header">
+<div class="header-holder">
+<div class="container">
+<div class="row">
+<div class="col-xs-6 col-sm-3">
+<div class="logo">
+<a href="index.html">
+<img alt="Logo" src="assets/images/header-45-logo.png"/>
+</a>
+</div>
+</div>
+<div class="col-xs-6 col-sm-9 static-block">
+<nav class="navbar navbar-default justify-end" id="nav">
+<div class="navbar-header">
+<button aria-expanded="false" class="navbar-toggle collapsed" data-target="#dynamic-header" data-toggle="collapse" type="button">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+</div>
+<div class="collapse navbar-collapse" id="dynamic-header"><ul class="nav navbar-nav navbar-right main-navigation text-uppercase font-lato"><li><a href="index.html">Home</a></li><li><a href="About_Us.html">About Us</a></li><li><a href="Services.html">Services</a></li><li><a href="Pricing.html">Pricing</a></li><li><a href="Contact_Us.html">Contact Us</a></li></ul></div>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</header>
+<script>
+	$(document).ready(function () {
+
+		function updateHeader45() {
+			if ($(window).scrollTop() > 30) {
+				$('header.header-45').addClass('sticky-active');
+			} else {
+				$('header.header-45').removeClass('sticky-active');
+			}
+		}
+
+		function setActiveMenu45() {
+
+			var currentPage = window.location.pathname.split('/').pop().toLowerCase();
+
+			if (!currentPage) {
+				currentPage = 'index.html';
+			}
+
+			$('.header-45 .main-navigation li').removeClass('active');
+
+			$('.header-45 .main-navigation li a').each(function () {
+
+				var href = $(this).attr('href');
+
+				if (!href) {
+					return;
+				}
+
+				var linkPage = href.split('/').pop().toLowerCase();
+
+				if (linkPage === currentPage) {
+					$(this).parent('li').addClass('active');
+				}
+
+			});
+		}
+
+		$(window).on('scroll', updateHeader45);
+
+		updateHeader45();
+		setActiveMenu45();
+
+	});
+</script>
+<section class="section-wrapper slider-45 header-45-section main-header-section" id="section-ypzcgyguxqs">
+<div class="carousel carousel-45">
+<div class="carousel-inner" style="transform: translateX(0%);">
+<div class="carousel-item active">
+<img alt="Financial Planning Banner" src="assets/images/header-45-slider-1.jpg"/>
+<div class="carousel-caption">
+<h1>
+						Smart <span>Financial</span> Strategies<br/>
+						For Sustainable Growth.
+					</h1>
+</div>
+</div>
+<div class="carousel-item">
+<img alt="Professional Accounting Services" src="assets/images/header-45-slider-2.jpg"/>
+<div class="carousel-caption">
+<h1>
+						Accurate <span>Accounting</span> with<br/>
+						Professional Expertise.
+					</h1>
+</div>
+</div>
+<div class="carousel-item">
+<img alt="Financial Guidance" src="assets/images/header-45-slider-3.jpg"/>
+<div class="carousel-caption">
+<h1>
+<span>Reliable</span> Financial Guidance,<br/>
+						Every Step of the Way.
+					</h1>
+</div>
+</div>
+</div>
+<div class="carousel-buttons">
+<button aria-label="Previous slide" class="prev" type="button">
+				❮
+			</button>
+<button aria-label="Next slide" class="next" type="button">
+				❯
+			</button>
+</div>
+<ul class="carousel-indicators">
+<li aria-label="Slide 1" class="active" data-slide-to="0" role="button"></li>
+<li aria-label="Slide 2" data-slide-to="1" role="button"></li>
+<li aria-label="Slide 3" data-slide-to="2" role="button"></li>
+</ul>
+</div>
+</section>
+<script>
+	(function () {
+
+		function initHeader45Slider() {
+
+			var carousel45 = document.querySelector('.carousel-45');
+
+			if (!carousel45) {
+				return;
+			}
+
+			var carouselInner45 = carousel45.querySelector('.carousel-inner');
+			var items45 = carousel45.querySelectorAll('.carousel-item');
+			var indicators45 = carousel45.querySelectorAll('.carousel-indicators li');
+			var prevButton45 = carousel45.querySelector('.prev');
+			var nextButton45 = carousel45.querySelector('.next');
+
+			if (
+				!carouselInner45 ||
+				!items45.length ||
+				!prevButton45 ||
+				!nextButton45
+			) {
+				return;
+			}
+
+			var currentIndex45 = 0;
+			var autoSlide45;
+
+			function showItem45(index) {
+
+				if (index >= items45.length) {
+					index = 0;
+				}
+
+				if (index < 0) {
+					index = items45.length - 1;
+				}
+
+				currentIndex45 = index;
+
+				carouselInner45.style.transform =
+					'translateX(-' + (currentIndex45 * 100) + '%)';
+
+				for (var i = 0; i < items45.length; i++) {
+					items45[i].classList.remove('active');
+				}
+
+				for (var j = 0; j < indicators45.length; j++) {
+					indicators45[j].classList.remove('active');
+				}
+
+				items45[currentIndex45].classList.add('active');
+
+				if (indicators45[currentIndex45]) {
+					indicators45[currentIndex45].classList.add('active');
+				}
+			}
+
+			function startAutoSlide45() {
+
+				clearInterval(autoSlide45);
+
+				autoSlide45 = setInterval(function () {
+					showItem45(currentIndex45 + 1);
+				}, 5000);
+			}
+
+			nextButton45.addEventListener('click', function () {
+				showItem45(currentIndex45 + 1);
+				startAutoSlide45();
+			});
+
+			prevButton45.addEventListener('click', function () {
+				showItem45(currentIndex45 - 1);
+				startAutoSlide45();
+			});
+
+			for (var i = 0; i < indicators45.length; i++) {
+
+				(function (index) {
+
+					indicators45[index].addEventListener(
+						'click',
+						function () {
+							showItem45(index);
+							startAutoSlide45();
+						}
+					);
+
+				})(i);
+			}
+
+			showItem45(0);
+			startAutoSlide45();
+		}
+
+		if (document.readyState === 'loading') {
+
+			document.addEventListener(
+				'DOMContentLoaded',
+				initHeader45Slider
+			);
+
+		} else {
+
+			initHeader45Slider();
+
+		}
+
+	})();
+</script>
+<section class="header-breadcrumb-section" style='background: url("assets/images/header-45-breadcrumb-section-bg.jpg") center center / cover no-repeat;'>
+<div class="container text-center">
+<h1 class="header-breadcrumb-section-title">
+<span class="Page_name">Page Name</span>
+</h1>
+<p class="header-breadcrumb-section-breadcrumb">
+<a href="index.html">Home</a>
+<span class="breadcrumb-separator">
+				&gt;
+			</span>
+<span class="Page_name">
+				Page Name
+			</span>
+</p>
+</div>
+</section>
