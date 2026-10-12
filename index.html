@@ -1,8 +1,4 @@
-
-<!DOCTYPE html>
-
-<html>
-<head>
+<html><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="" name="description"/>
@@ -38,33 +34,171 @@
         }
     </style>
 <link href="assets/css/custom-theme-colors.css" rel="stylesheet"/>
-</head>
+<style>
+
+.seo-modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.6);
+    z-index:999999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.seo-modal-box{
+    width:100%;
+    max-width:550px;
+    background:#fff;
+    border-radius:14px;
+    overflow:hidden;
+    font-family:'Quicksand', sans-serif;
+}
+
+.seo-modal-header{
+    padding:18px 22px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border-bottom:1px solid #eee;
+}
+
+.seo-modal-header h3{
+    margin:0;
+    font-size:22px;
+    font-weight:700;
+}
+
+#closeSeoModal{
+    border:none;
+    background:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+.seo-modal-body{
+    padding:22px;
+}
+
+.seo-modal-body label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.seo-modal-body textarea,
+.seo-modal-body input{
+    width:100%;
+    border:1px solid #ddd;
+    border-radius:10px;
+    padding:12px;
+    margin-bottom:18px;
+    outline:none;
+}
+
+.seo-modal-body textarea{
+    height:120px;
+    resize:none;
+}
+
+.seo-modal-footer{
+    padding:18px 22px;
+    display:flex;
+    justify-content:flex-end;
+    gap:12px;
+    border-top:1px solid #eee;
+}
+
+.seo-modal-footer button{
+    border:none;
+    padding:10px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:600;
+    color: #FFF;
+  background: #3b3b3b;
+}
+
+#saveSeoUpdate{
+    background:linear-gradient(135deg,#e39a4e,#fb1b1b);
+    color:#fff;
+}
+
+</style>
+<style id="aiModalSpinnerStyles">
+        .ai-modal-content {
+            position: relative;
+        }
+
+        /* Overlay blocks everything */
+        .ai-modal-spinner {
+            position: absolute;
+            inset: 0;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 20;
+            backdrop-filter: blur(1.5px);
+            pointer-events: auto; /* blocks modal */
+        }
+
+        /* Spinner itself should NOT intercept clicks */
+        .ai-modal-spinner * {
+            pointer-events: none;
+        }
+
+        /* Close button MUST be above overlay */
+        .ai-close {
+            align-self: flex-start;
+            margin-right: auto; /* push left */
+            margin-left: 0;
+            z-index: 30;
+        }
+
+
+        /* Spinner styling */
+        .ai-spinner {
+            width: 42px;
+            height: 42px;
+            border: 4px solid rgba(0,0,0,0.25);
+            border-top-color: #000;
+            border-radius: 50%;
+            animation: aiSpin 0.9s linear infinite;
+        }
+
+        @keyframes aiSpin {
+            to { transform: rotate(360deg); }
+        }
+
+    </style></head>
 <body>
-<div id="wrapper">
-<div data-src="header.html" id="header"></div>
-<div id="mainPageContent">
-<section class="section-wrapper home-28">
+<div class="" id="wrapper" style="pointer-events: auto;">
+<div class="" data-src="header.html" id="header"></div>
+<div class="" id="mainPageContent">
+<section class="section-wrapper home-28" id="section-mm3562ihuad">
 <div class="container text-center">
 <h5 class="home-28-subtitle">High-Efficiency Systems</h5>
-<h2 class="home-28-title">Air Conditioning Advantage</h2>
+<h2 class="home-28-title">Air Conditioning Advantages</h2>
 <div class="row home-28-feature-wrap">
 <!-- Left Column -->
 <div class="col-sm-3 col-xs-6 home-28-feature text-center home-28-left">
 <div class="home-28-icon-box">
 <div class="home-28-icon"><i class="ri-flashlight-line"></i></div>
 <h4 class="home-28-feature-title">Energy Efficiency</h4>
-<p>Our units deliver optimal cooling with minimal energy use.</p>
+<p class="">Our units deliver optimal cooling with minimal energy use.</p>
 </div>
 <div class="home-28-icon-box">
 <div class="home-28-icon"><i class="ri-volume-mute-line"></i></div>
 <h4 class="home-28-feature-title">Quiet Operations</h4>
-<p>Designed for silent performance to ensure peaceful environments.</p>
+<p class="">Designed for silent performance to ensure peaceful environments.</p>
 </div>
 </div>
 <!-- Center Image -->
 <div class="col-sm-6 col-xs-12 home-28-image-wrap">
 <div class="home-28-image-circle">
-<img alt="Air Conditioner" class="img-responsive center-block" src="assets/images/home-28-bg.png"/>
+<img alt="Air Conditioner" class="img-responsive center-block updateImg" src="assets/images/home-28-bg.png?v=1791801706"/>
 </div>
 </div>
 <!-- Right Column -->
@@ -72,78 +206,78 @@
 <div class="home-28-icon-box">
 <div class="home-28-icon"><i class="ri-layout-grid-line"></i></div>
 <h4 class="home-28-feature-title">Wide Selection</h4>
-<p>Choose from a variety of AC systems suited for every need.</p>
+<p class="">Choose from a variety of AC systems suited for every need.</p>
 </div>
 <div class="home-28-icon-box">
 <div class="home-28-icon"><i class="ri-tools-line"></i></div>
 <h4 class="home-28-feature-title">Maintenance &amp; Repairs</h4>
-<p>Expert support for installation, servicing, and repairs.</p>
+<p class="">Expert support for installation, servicing, and repairs.</p>
 </div>
 </div>
 </div>
-<a class="btn home-28-button" href="#">More About Services</a>
+<a class="btn home-28-button" href="#" style="cursor: pointer;">More About Services</a>
 </div>
 </section>
-<div class="home-72-section section-wrapper home-72">
+<div class="home-72-section section-wrapper home-72" id="section-ygyq4a0samq">
 <div class="container fade-in">
 <div class="home-72-tab-section">
 <ul class="nav nav-tabs" role="tablist">
 <li class="active">
-<a data-toggle="tab" href="#completed">Completed Projects</a>
+<a class="" data-toggle="tab" href="#completed" style="cursor: pointer;">Completed Projects</a>
 </li>
-<li>
-<a data-toggle="tab" href="#ongoing">Ongoing Projects</a>
+<li class="">
+<a class="" data-toggle="tab" href="#ongoing" style="cursor: pointer;">Ongoing Projects</a>
 </li>
 </ul>
 <div class="tab-content">
 <div class="tab-pane fade in active" id="completed">
 <div class="home-72-project-card">
-<h3>Vertex Power Engineering Pvt. Ltd., Mumbai</h3>
-<p><strong>Industrial Electrical Infrastructure</strong></p>
-<ul>
-<li>
-<strong>Ardent Pharmaceuticals Ltd., Aurangabad – Maharashtra</strong><br/>
+<h3 class="">Vertex Power Engineering Pvt. Ltd., Mumbai</h3>
+<p class=""><strong class="">Industrial Electrical Infrastructure</strong></p>
+<ul class="">
+<li class="">
+<strong class="">Ardent Pharmaceuticals Ltd., Aurangabad – Maharashtra</strong><br class=""/>
                                 Design, installation and commissioning of a 33 KV receiving substation,
                                 transformer systems, HT panels and associated electrical distribution infrastructure.
                             </li>
-<li>
-<strong>Western Auto Components Pvt. Ltd., Chakan – Pune</strong><br/>
+<li class="">
+<strong class="">Western Auto Components Pvt. Ltd., Chakan – Pune</strong><br class=""/>
                                 Execution of 22 KV incoming power infrastructure, HT cable network,
                                 transformer installation, protection systems and electrical testing.
                             </li>
-<li>
-<strong>Greenfield Manufacturing Park, Nashik – Maharashtra</strong><br/>
+<li class="">
+<strong class="">Greenfield Manufacturing Park, Nashik – Maharashtra</strong><br class=""/>
                                 Development of internal electrical distribution including 33/11 KV substations,
                                 overhead lines, DTC installations and utility power connectivity.
                             </li>
-<li>
-<strong>Riverstone Industrial Estate, Nagpur – Maharashtra</strong><br/>
+<li class="">
+<strong class="">Riverstone Industrial Estate, Nagpur – Maharashtra</strong><br class=""/>
                                 Electrical infrastructure development covering HT/LT distribution,
                                 transformer installation, cable networks, testing and commissioning.
                             </li>
 </ul>
 </div>
 <div class="home-72-project-card">
-<h3>PrimeGrid Electrical Solutions, Pune</h3>
-<p><strong>Power Distribution &amp; Utility Projects</strong></p>
-<ul>
-<li>
-<strong>Sunrise Industrial Township, Pune</strong><br/>
+<h3 class="">PrimeGrid Electrical Solutions, Pune</h3>
+<p class=""><strong class="">Power Distribution &amp; Utility Projects</strong></p>
+<ul class="">
+<li class="">
+<strong class="">Sunrise Industrial Township, Pune</strong><br class=""/>
                                 Installation and commissioning of 33/11 KV substations, transformers,
                                 HT panels and internal power distribution systems.
                             </li>
-<li>
-<strong>Metro Industrial Corridor, Thane – Maharashtra</strong><br/>
+<li class="">
+<strong class="">Metro Industrial Corridor, Thane – Maharashtra</strong><br class=""/>
                                 Construction of underground HT cable networks, feeder systems,
                                 electrical chambers and associated distribution infrastructure.
                             </li>
-<li>
-<strong>NorthPoint Logistics Park, Bhiwandi</strong><br/>
+<li class="">
+<strong class="">NorthPoint Logistics Park, Bhiwandi</strong><br class=""/>
                                 Power supply infrastructure including load enhancement, transformer
                                 installation, HT/LT networks and electrical system commissioning.
                             </li>
-<li>
-<strong>Orion Engineering Campus, Kolhapur</strong><br/>
+<li class="">
+<strong class="">Orion Engineering Campus, Kolhapur</strong><br class=""/>
                                 Complete electrical distribution works including DTC installation,
                                 overhead line construction, testing and final commissioning.
                             </li>
@@ -152,52 +286,52 @@
 </div>
 <div class="tab-pane fade" id="ongoing">
 <div class="home-72-project-card">
-<h3>Nova Infra Power Systems, Navi Mumbai</h3>
-<p><strong>Ongoing Infrastructure Projects</strong></p>
-<ul>
-<li>
-<strong>Integrated Industrial Power Network, Panvel</strong><br/>
+<h3 class="">Nova Infra Power Systems, Navi Mumbai</h3>
+<p class=""><strong class="">Ongoing Infrastructure Projects</strong></p>
+<ul class="">
+<li class="">
+<strong class="">Integrated Industrial Power Network, Panvel</strong><br class=""/>
                                 Development of 33/11 KV substations, HT cable routes, transformers,
                                 feeder systems and complete electrical distribution infrastructure.
                             </li>
-<li>
-<strong>Urban Transit Electrification, Mumbai Region</strong><br/>
+<li class="">
+<strong class="">Urban Transit Electrification, Mumbai Region</strong><br class=""/>
                                 Installation of electrical distribution systems, traction power infrastructure,
                                 HT cabling and commissioning support for an urban transit development.
                             </li>
-<li>
-<strong>Solar Power Evacuation Project, Solapur</strong><br/>
+<li class="">
+<strong class="">Solar Power Evacuation Project, Solapur</strong><br class=""/>
                                 Development of 132 KV grid connectivity, bay extension, transmission line
                                 infrastructure and protection system integration for renewable power evacuation.
                             </li>
-<li>
-<strong>Industrial Expansion Project, Satara</strong><br/>
+<li class="">
+<strong class="">Industrial Expansion Project, Satara</strong><br class=""/>
                                 Load enhancement, utility coordination, transformer installation,
                                 33 KV underground cabling and commissioning of new electrical systems.
                             </li>
 </ul>
 </div>
 <div class="home-72-project-card">
-<h3>ElectraCore Projects &amp; Services, Nagpur</h3>
-<p><strong>Current Electrical Works</strong></p>
-<ul>
-<li>
-<strong>Manufacturing Facility Power Upgrade</strong><br/>
+<h3 class="">ElectraCore Projects &amp; Services, Nagpur</h3>
+<p class=""><strong class="">Current Electrical Works</strong></p>
+<ul class="">
+<li class="">
+<strong class="">Manufacturing Facility Power Upgrade</strong><br class=""/>
                                 Expansion of HT/LT distribution systems, transformer capacity enhancement,
                                 new feeder installation and electrical protection upgrades.
                             </li>
-<li>
-<strong>Commercial Development Power Infrastructure</strong><br/>
+<li class="">
+<strong class="">Commercial Development Power Infrastructure</strong><br class=""/>
                                 Installation of HT panels, underground cabling, distribution transformers
                                 and internal electrical networks for a large commercial development.
                             </li>
-<li>
-<strong>Renewable Energy Integration</strong><br/>
+<li class="">
+<strong class="">Renewable Energy Integration</strong><br class=""/>
                                 Grid integration, power evacuation systems, substation upgrades and
                                 protection coordination for a renewable energy facility.
                             </li>
-<li>
-<strong>Utility Approval &amp; Commissioning Works</strong><br/>
+<li class="">
+<strong class="">Utility Approval &amp; Commissioning Works</strong><br class=""/>
                                 Coordination for electrical inspections, statutory approvals, charging
                                 permissions, testing and final commissioning of project infrastructure.
                             </li>
@@ -209,7 +343,7 @@
 </div>
 </div>
 </div>
-<div data-src="footer.html" id="footer"></div>
+<div class="" data-src="footer.html" id="footer"></div>
 </div>
 <script src="assets/js/jquery.js"></script>
 <script src="assets/js/middle-section.js"></script>
@@ -278,5 +412,4 @@
                         });
                     </script>
 <script src="assets/js/common_js/image_uploader.js"></script>
-</body>
-</html>
+</body></html>
